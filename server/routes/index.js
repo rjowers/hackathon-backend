@@ -1,4 +1,5 @@
 const UserController = require("../controllers/users");
+const Middleware = require('../middleware/middleware');
 
 module.exports = (app) => {
   app.use(function(req, res, next) {
@@ -7,6 +8,6 @@ module.exports = (app) => {
    next();
  });
   app.post('/users', UserController.create);
-  // app.post('/login', UserController.login);
+  app.post('/login', UserController.login);
 
 };
