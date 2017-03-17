@@ -11,11 +11,16 @@ module.exports = (app) => {
  });
   app.post('/users', UserController.create);
   app.post('/login', UserController.login);
-  app.get('/users', UserController.findAll)
+  app.get('/users', UserController.findAll);
+  app.delete('/users/:userid', UserController.delete);
 
   app.post('/photos', Middleware.authenticate, PhotosController.create);
   app.get('/photos', PhotosController.findAll);
+  app.delete('/photos/:photoid', PhotosController.delete);
+
 
   app.post('/comments/:photoid', Middleware.authenticate, CommentsController.create);
   app.get('/comments', CommentsController.findAll);
+  app.delete('/comments/:commentid', CommentsController.delete);
+
 };

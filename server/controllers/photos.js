@@ -17,5 +17,15 @@ module.exports = {
      Photos.findAll()
       .then(photos=> res.status(201).send(photos))
       .catch(error => res.status(400).send(error));
-    }
+    },
+
+  delete(req, res){
+  Photos.destroy({
+         where: {
+                id:req.params.photoid
+              }
+          })
+  .then((photos) => res.status(200).send(photos))
+  .catch((error) => res.status(400).send(error));
+}
  };
