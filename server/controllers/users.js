@@ -49,7 +49,7 @@ module.exports = {
           .catch(error => res.status(400).send(error));
      },
 
-     findAll (req,res) {
+     findAll (req, res) {
        Users.findAll()
          .then(user => res.status(201).send(user))
         .catch(error => res.status(400).send(error));
