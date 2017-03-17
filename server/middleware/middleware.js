@@ -7,8 +7,9 @@ const User = require("../models").users;
 module.exports = {
   authenticate (req, res, next) {
     // Look for a token.
-    var token = req.headers['access-token'] || req.query.access_token;
 
+    var token = req.headers['access-token'] || req.query.access_token;
+    //console.log(token);
     // If they didn't provide a token, send them away.
     if (!token) {
       res.status(401).send({
@@ -18,11 +19,12 @@ module.exports = {
 
     // Try to decode the token.
     try {
-      var decoded = jwt.decode(token, appSecrets.jwtSecret);
+      var decoded = jwt.decode(token, appSecrets.secret);
       var userId = decoded.id;
+      //console.log(userId);
 
 
-      User.findById(id).then(user => {
+      User.findById(userId).then(user => {
 
 
         if (!user) {
