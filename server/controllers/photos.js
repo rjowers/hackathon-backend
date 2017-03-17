@@ -4,7 +4,7 @@ module.exports = {
    create (req, res) {
     Photos.create({
       photo_url: req.body.photo_url,
-      user_id: req.body.user_id,
+      user_id: req.user.id,
       description: req.body.description,
       votes: req.body.votes
 
