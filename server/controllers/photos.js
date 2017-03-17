@@ -11,5 +11,11 @@ module.exports = {
     })
       .then(users => res.status(201).send(users))
       .catch(error => res.status(400).send(error));
-   }
+   },
+
+   findAll (req, res) {
+     Photos.findAll()
+      .then(photos=> res.status(201).send(photos))
+      .catch(error => res.status(400).send(error));
+    }
  };
