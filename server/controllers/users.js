@@ -2,6 +2,7 @@ const Users = require("../models").users;
 const bcrypt = require('bcryptjs');
 const jwt = require('jwt-simple');
 const appSecrets = require ('../config/secret');
+const Photos = require("../models").photos;
 
 module.exports = {
    create (req, res) {
@@ -61,11 +62,21 @@ module.exports = {
                 id:req.params.userid
               }
           })
-  .then((users) => res.status(200).send(user))
+  .then((users) => res.status(200).send(users))
+  .catch((error) => res.status(400).send(error));
+},
+
+findOne (req,res) {
+  console.log('hello');
+  Users.findById(req.params.id, {
+    include: {
+      model: Photos
+    }
+
+  })
+  .then((users) => res.status(200).send(users))
   .catch((error) => res.status(400).send(error));
 }
-
-
 };
 
 // eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpZCI6MSwidXNlcm5hbWUiOiJSeWFuIn0.FPo-oRS_8slFiWjhOUY84y4C-NfHYau5Yi-SC3vPijQ

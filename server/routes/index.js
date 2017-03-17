@@ -17,10 +17,15 @@ module.exports = (app) => {
   app.post('/photos', Middleware.authenticate, PhotosController.create);
   app.get('/photos', PhotosController.findAll);
   app.delete('/photos/:photoid', PhotosController.delete);
+  app.get('/photos/user/:id', UserController.findOne)
+
+
 
 
   app.post('/comments/:photoid', Middleware.authenticate, CommentsController.create);
   app.get('/comments', CommentsController.findAll);
   app.delete('/comments/:commentid', CommentsController.delete);
+
+
 
 };

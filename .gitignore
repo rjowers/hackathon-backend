@@ -1,2 +1,70 @@
 node_modules/
 development.db
+
+{
+  "user": {
+    "id": 3,
+    "username": "Aquaman",
+    "password": "$2a$10$Ofhs2g9EftSOvon.52uZ.OTfKqiR8Cn2G/EI7hJ7L9AThT9lm1uB2",
+    "email": "aquaman@gmail.com",
+    "salt": "$2a$10$Ofhs2g9EftSOvon.52uZ.O",
+    "createdAt": "2017-03-17T19:55:20.107Z",
+    "updatedAt": "2017-03-17T19:55:20.107Z"
+  },
+  "token": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpZCI6MywidXNlcm5hbWUiOiJBcXVhbWFuIn0.4h7IfOnO3MSYEPTWdWZ3xjKi2zlanQvKkjMwEu6owjI"
+}
+
+ {
+  "user": {
+    "id": 5,
+    "username": "Ironman",
+    "password": "$2a$10$.CskTctu9hJtNQhskUid2OVt3z6.ty8Ia.XqKXVyUmui8odLh0xqK",
+    "email": "ironman@gmail.com",
+    "salt": "$2a$10$.CskTctu9hJtNQhskUid2O",
+    "createdAt": "2017-03-17T20:00:40.017Z",
+    "updatedAt": "2017-03-17T20:00:40.017Z"
+  },
+  "token": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpZCI6NSwidXNlcm5hbWUiOiJJcm9ubWFuIn0.-SkjwbOph-7Qbj0LGgrOVjR4Z1fZSGQv6MMBNHvYg9U"
+}
+
+
+ {
+  "user": {
+    "id": 6,
+    "username": "Antman",
+    "password": "$2a$10$sinkQDTYo99JPKKfnf0ICOM00BtmPmQY.LgKUE2PLZrcN6yk.Jrkq",
+    "email": "antman@gmail.com",
+    "salt": "$2a$10$sinkQDTYo99JPKKfnf0ICO",
+    "createdAt": "2017-03-17T20:01:50.468Z",
+    "updatedAt": "2017-03-17T20:01:50.468Z"
+  },
+  "token": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpZCI6NiwidXNlcm5hbWUiOiJBbnRtYW4ifQ.Wz4UaZhEzp_2lkW0k_SNokfUYjLeBhasI91HXWoNbdo"
+}
+
+
+{
+  "user": {
+    "id": 7,
+    "username": "Thor",
+    "password": "$2a$10$RRBf9KjlhDrpB/5EJQ0.meE/tGAf0ik8PCmzH8k8Cti4OT.W2F9aG",
+    "email": "thor@gmail.com",
+    "salt": "$2a$10$RRBf9KjlhDrpB/5EJQ0.me",
+    "createdAt": "2017-03-17T20:03:24.559Z",
+    "updatedAt": "2017-03-17T20:03:24.559Z"
+  },
+  "token": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpZCI6NywidXNlcm5hbWUiOiJUaG9yIn0.GqJpXA0OkG9QURC7woHDwZ0TDMTDkSBml4pmPk4ZLMI"
+}
+
+
+ {
+  "user": {
+    "id": 8,
+    "username": "Hulk",
+    "password": "$2a$10$CYXOxc3ytx5P0g.HLUU2sev.SbrKfWXOTwO5rrVMKEqD30b28H2ae",
+    "email": "hulk@gmail.com",
+    "salt": "$2a$10$CYXOxc3ytx5P0g.HLUU2se",
+    "createdAt": "2017-03-17T20:05:02.430Z",
+    "updatedAt": "2017-03-17T20:05:02.430Z"
+  },
+  "token": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpZCI6OCwidXNlcm5hbWUiOiJIdWxrIn0.avlu-r9tb7x_B87sKa2t8ZL4nexLoujglKZzujkOv9o"
+}
