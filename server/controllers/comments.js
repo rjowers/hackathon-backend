@@ -17,5 +17,17 @@ module.exports = {
      Comments.findAll()
        .then(comments=> res.status(201).send(comments))
       .catch(error => res.status(400).send(error));
-    }
+    },
+
+
+  delete(req, res){
+  Comments.destroy({
+         where: {
+                id:req.params.commentid
+              }
+          })
+  .then((comments) => res.status(200).send(comments))
+  .catch((error) => res.status(400).send(error));
+}
+
  };
