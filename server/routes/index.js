@@ -11,6 +11,6 @@ module.exports = (app) => {
   app.post('/users', UserController.create);
   app.post('/login', UserController.login);
 
-  app.post('/photos', PhotosController.create);
+  app.post('/photos', Middleware.authenticate, PhotosController.create);
 
 };
