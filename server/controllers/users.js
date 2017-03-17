@@ -47,5 +47,13 @@ module.exports = {
             }
           })
           .catch(error => res.status(400).send(error));
+     },
+
+     findAll (res,req) {
+       Users.findAll()
+         .then(user => res.status(201).send(user))
+        .catch(error => res.status(400).send(error));
        }
-     };
+
+
+};
