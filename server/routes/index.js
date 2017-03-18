@@ -16,6 +16,7 @@ module.exports = (app) => {
   app.get('/user/:userid/photos', UserController.findOne);
 
   app.post('/photos', Middleware.authenticate, PhotosController.create);
+  // app.post('/photos', Middleware.authenticate, PhotosController.create);
   app.get('/photos', PhotosController.findAll);
   app.delete('/photos/:photoid', PhotosController.delete);
   // app.get('/photos/:photoid/comments/', PhotosController.findComments);
