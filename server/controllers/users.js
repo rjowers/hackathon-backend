@@ -85,9 +85,6 @@ update (req, res){
   .then(User =>
   User.update(req.body, {
     fields: ['profilephoto'],
-      where: {
-          id: req.params.id
-        }
   }))
   .then((users) => res.status(200).send(users))
   .catch((error) => res.status(400).send(error));
