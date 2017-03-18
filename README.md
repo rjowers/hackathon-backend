@@ -29,6 +29,10 @@ description: string
 GET/photos
 no parameters needed
 
+DELETE/photos/:photoid
+
+GET/photo/photoid/
+
 Comments
 
 POST/Comments/id
@@ -37,6 +41,8 @@ comment: string
 
 GET/Comments
 no parameters needed
+
+DELETE/comments/:commentid
 
 
 
