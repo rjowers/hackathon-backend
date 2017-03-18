@@ -8,7 +8,8 @@ module.exports = function(sequelize, DataTypes) {
   }, {
     classMethods: {
       associate: function(models) {
-        photos.hasMany(models.comments, {foreignKey: 'photo_id'})
+        photos.hasMany(models.comments, {foreignKey: 'photo_id'});
+        photos.belongsTo(models.users, {foreignKey: 'user_id'})
       }
     }
   });

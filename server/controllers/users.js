@@ -71,8 +71,7 @@ findOne (req,res) {
   console.log('hello');
   Users.findById(req.params.userid, {
     include: {
-      model: Photos,
-      include: Comments
+      model: Photos
     }
 
   })

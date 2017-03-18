@@ -1,5 +1,7 @@
 const Photos = require("../models").photos;
 const Comments = require('../models').comments;
+const Users = require('../models').users;
+
 
 module.exports = {
    create (req, res) {
@@ -30,15 +32,17 @@ module.exports = {
     .catch((error) => res.status(400).send(error));
 },
 
-  findComments (req, res) {
-    Photos.findById(req.params.userid, {
-      include: {
-        model: Comments
-      }
-    })
-    .then((photos) => res.status(200).send(photos))
-    .catch((error) => res.status(400).send(error));
-  }
+findOne (req,res) {
+  console.log('hello');
+  Photos.findById(req.params.photoid, {
+    include: [
+      { model: User, attributes: ['username'] },
+      { model: Comments }
+    ]
+  })
+  .then((users) => res.status(200).send(users))
+  .catch((error) => res.status(400).send(error));
+}
 
 
 
