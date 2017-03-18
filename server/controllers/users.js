@@ -78,7 +78,21 @@ findOne (req,res) {
   })
   .then((users) => res.status(200).send(users))
   .catch((error) => res.status(400).send(error));
+},
+
+update (req, res){
+  Users.findById(req.params.userid)
+  .then(User =>
+  User.update(req.body, {
+    fields: ['profilephoto'],
+      where: {
+          id: req.params.id
+        }
+  }))
+  .then((users) => res.status(200).send(users))
+  .catch((error) => res.status(400).send(error));
 }
+
 };
 
 // eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpZCI6MSwidXNlcm5hbWUiOiJSeWFuIn0.FPo-oRS_8slFiWjhOUY84y4C-NfHYau5Yi-SC3vPijQ

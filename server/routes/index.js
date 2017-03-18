@@ -14,6 +14,7 @@ module.exports = (app) => {
   app.get('/users', UserController.findAll);
   app.delete('/users/:userid', UserController.delete);
   app.get('/user/:userid/photos', Middleware.authenticate, UserController.findOne);
+  app.put('/update/:userid', UserController.update);
 
   app.post('/photos', Middleware.authenticate, PhotosController.create);
   // app.post('/photos', Middleware.authenticate, PhotosController.create);
