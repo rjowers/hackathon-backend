@@ -3,6 +3,7 @@ const bcrypt = require('bcryptjs');
 const jwt = require('jwt-simple');
 const appSecrets = require ('../config/secret');
 const Photos = require("../models").photos;
+const Comments = require('../models').comments;
 
 module.exports = {
    create (req, res) {
@@ -30,13 +31,13 @@ module.exports = {
               return res.status(401).send({ message: "No such email or wrong password." });
             }
 
-            console.log(user.salt);
+            //console.log(user.salt);
             var input = bcrypt.hashSync(req.body.password, user.salt);
-            console.log(`hashed input: ${input}, stored password: ${user.password}`);
+            //console.log(`hashed input: ${input}, stored password: ${user.password}`);
             if (input === user.password) {
-              console.log('hello from inside input')
+              //console.log('hello from inside input')
               var token = jwt.encode({ id: user.id, username: user.username }, appSecrets.secret);
-              console.log(token)
+              //console.log(token)
 
               var json = {
               user: user,
@@ -68,9 +69,10 @@ module.exports = {
 
 findOne (req,res) {
   console.log('hello');
-  Users.findById(req.params.id, {
+  Users.findById(req.params.userid, {
     include: {
-      model: Photos
+      model: Photos,
+      include: Comments
     }
 
   })

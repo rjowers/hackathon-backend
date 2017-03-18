@@ -1,4 +1,5 @@
 const Photos = require("../models").photos;
+const Comments = require('../models').comments;
 
 module.exports = {
    create (req, res) {
@@ -20,15 +21,24 @@ module.exports = {
     },
 
   delete(req, res){
-  Photos.destroy({
-         where: {
-                id:req.params.photoid
-              }
-          })
-  .then((photos) => res.status(200).send(photos))
-  .catch((error) => res.status(400).send(error));
+    Photos.destroy({
+           where: {
+                  id:req.params.photoid
+                }
+            })
+    .then((photos) => res.status(200).send(photos))
+    .catch((error) => res.status(400).send(error));
 },
 
+  findComments (req, res) {
+    Photos.findById(req.params.userid, {
+      include: {
+        model: Comments
+      }
+    })
+    .then((photos) => res.status(200).send(photos))
+    .catch((error) => res.status(400).send(error));
+  }
 
 
 
