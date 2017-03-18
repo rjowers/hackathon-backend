@@ -13,7 +13,7 @@ module.exports = (app) => {
   app.post('/login', UserController.login);
   app.get('/users', UserController.findAll);
   app.delete('/users/:userid', UserController.delete);
-  app.get('/user/:userid/photos', Middleware.authenticate, UserController.findOne);
+  app.get('/user/:userid/photos', UserController.findOne);
   app.put('/update/:userid', UserController.update);
 
   app.post('/photos', Middleware.authenticate, PhotosController.create);
