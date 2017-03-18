@@ -36,7 +36,7 @@ findOne (req,res) {
   console.log('hello');
   Photos.findById(req.params.photoid, {
     include: [
-      { model: User, attributes: ['username'] },
+      { model: Users, attributes: ['username'] },
       { model: Comments }
     ]
   })
