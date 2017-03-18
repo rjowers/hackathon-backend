@@ -13,6 +13,7 @@ module.exports = {
       username: req.body.username,
       password: hashedPass,
       email: req.body.email,
+      profilephoto: req.body.profilephoto,
       salt: salt
 
     })

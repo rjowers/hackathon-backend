@@ -10,7 +10,7 @@ module.exports = {
 
   down: function (queryInterface, Sequelize) {
 
-    return queryInterface.removeColumn('users', 'profilephoto', Sequelize.STRING);
+    return queryInterface.removeColumn('users', 'profilephoto');
 
   }
 };
