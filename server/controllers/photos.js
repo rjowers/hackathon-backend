@@ -40,7 +40,9 @@ findOne (req,res) {
   Photos.findById(req.params.photoid, {
     include: [
       { model: Users, attributes: ['username'] },
-      { model: Comments }
+      { model: Comments, includes: {
+        model: Users, attributes: ['username']
+      } }
     ]
   })
   .then((users) => res.status(200).send(users))
